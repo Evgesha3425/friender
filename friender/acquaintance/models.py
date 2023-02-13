@@ -2,9 +2,10 @@ from django.db import models
 
 
 class User(models.Model):
+    # id = models.BigAutoField(primary_key=True)
     name = models.CharField(max_length=50, verbose_name='имя')
     surname = models.CharField(max_length=50, verbose_name='фамилия')
-    age = models.IntegerField(verbose_name='возраст')
+    date_of_birth = models.DateField(null=True, blank=True, verbose_name='дата рождения')
     gender = models.CharField(max_length=1, verbose_name='пол')
     looking_gender = models.CharField(max_length=1, verbose_name='ищу')
 
